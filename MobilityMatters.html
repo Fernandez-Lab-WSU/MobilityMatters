@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Projecting Human Mobility and Disease Data to Support Decision-Making</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="MobilityMatters_files/libs/clipboard/clipboard.min.js"></script>
+<script src="MobilityMatters_files/libs/quarto-html/quarto.js"></script>
+<script src="MobilityMatters_files/libs/quarto-html/popper.min.js"></script>
+<script src="MobilityMatters_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="MobilityMatters_files/libs/quarto-html/anchor.min.js"></script>
+<link href="MobilityMatters_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="MobilityMatters_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="MobilityMatters_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="MobilityMatters_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="MobilityMatters_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="MobilityMatters_files/libs/quarto-contrib/intersection-observer-polyfill-1.0.0/intersection-observer.js"></script>
+<script src="MobilityMatters_files/libs/quarto-contrib/scrollama-3.2.0/scrollama.min.js"></script>
+<script src="MobilityMatters_files/libs/quarto-contrib/closeread-0.1.0/closeread.js"></script>
+<script type="module" src="MobilityMatters_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="MobilityMatters_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<meta cr-debug-mode="false">
+<meta cr-remove-header-space="true">
+
+
+<link rel="stylesheet" href="_extensions/qmd-lab/closeread/closeread.css">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
+
+<main class="content column-page" id="quarto-document-content">
+      <!-- user-provided yaml closeread style options -->
+      <style>
+        :root {
+          --cr-poem-font-family: Monserrat;
+--cr-section-background-color: #114B5F;
+--cr-narrative-font-family: Monserrat;
+        }
+      </style>
+    
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Projecting Human Mobility and Disease Data to Support Decision-Making</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="mobility-matters" class="level1">
+<h1>Mobility Matters</h1>
+<section id="people-moves-in-buenos-aires" class="level2">
+<h2 class="anchored" data-anchor-id="people-moves-in-buenos-aires">People moves in Buenos Aires</h2>
+<div class="cr-section cr-column-screen overlay-center">
+<div class="narrative-col">
+<div class="progress-block">
+<div class="trigger">
+<div class="narrative">
+<p>The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors.@cr-myimage</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-myimage">
+<div class="narrative">
+<p>Human-to-human contact is a key factor in the spread of virus as COVID-19, especially in cities with high population density. </p>
+</div>
+</div>
+</div>
+</div>
+<div class="sticky-col">
+<div class="sticky-col-stack">
+<div id="cr-myimage" class="sticky">
+<p><img src="img/people_subway.jpg" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+<p>Therefore, in 2020, when the pandemic of 2020 was declared, many governments worldwide implemented measures such as quarantine.</p>
+</section>
+<section id="quarentine" class="level2">
+<h2 class="anchored" data-anchor-id="quarentine">Quarentine</h2>
+<div class="cr-section cr-column-screen sidebar-right">
+<div class="narrative-col">
+<div class="progress-block">
+<div class="trigger">
+<div class="narrative">
+<p>In 2020, COVID-19 pandemic was declared.</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-highlight="cr-f1,cr-f2" data-focus-on="cr-txt">
+<div class="narrative">
+<p>Many governments worldwide implemented measures such as quarantine.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sticky-col">
+<div class="sticky-col-stack">
+<div id="cr-txt" class="scale-to-fill sticky">
+<ul>
+<li>Phase 1: <span id="cr-f1">Strict isolation</span></li>
+<li>Phase 2: <span id="cr-f2">Managed isolation</span></li>
+<li>Phase 3: Isolation by geographic segmentation.</li>
+<li>Phase 4: Isolation with progressive reopening.</li>
+<li>Phase 5: Last phase search to re-establish new normality.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="facebook-mobility-data" class="level2">
+<h2 class="anchored" data-anchor-id="facebook-mobility-data">Facebook Mobility Data</h2>
+</section>
+<section id="understansing-the-movement-in-the-map" class="level2">
+<h2 class="anchored" data-anchor-id="understansing-the-movement-in-the-map">Understansing the movement in the map</h2>
+<div class="cr-section cr-column-screen sidebar-left">
+<div class="narrative-col">
+<div class="progress-block">
+<div class="trigger new-trigger" data-focus-on="cr-graphic">
+<div class="narrative">
+<p>1</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-graphic">
+<div class="narrative">
+<p>2</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-graphic">
+<div class="narrative">
+<p>3</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-graphic">
+<div class="narrative">
+<p>4</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-graphic">
+<div class="narrative">
+<p>5</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-graphic">
+<div class="narrative">
+<p>6</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sticky-col">
+<div class="sticky-col-stack">
+<div id="cr-graphic" class="sticky">
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="80" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 79;"><span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">md</span><span class="vs">`Active trigger: </span><span class="sc">${</span>crTriggerIndex<span class="sc">}</span><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="82" data-source-offset="-40"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 81;"><span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="pp">require</span>(<span class="st">"leaflet@1.9.4"</span>)<span class="op">;</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>GeoTIFF <span class="op">=</span> <span class="pp">require</span>(<span class="st">'geotiff'</span>)<span class="op">;</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>parseGeoraster <span class="op">=</span> <span class="pp">require</span>(<span class="st">"georaster"</span>)<span class="op">;</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>GeoRasterLayer <span class="op">=</span> <span class="pp">require</span>(<span class="st">"georaster-layer-for-leaflet"</span>)<span class="op">;</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='</span><span class="sc">${</span><span class="fu">resolve</span>(<span class="st">'leaflet@1.9.4/dist/leaflet.css'</span>)<span class="sc">}</span><span class="vs">' rel='stylesheet' /&gt;`</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="88" data-source-offset="-282"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 87;"><span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>container <span class="op">=</span> DOM<span class="op">.</span><span class="fu">element</span>(<span class="st">'div'</span><span class="op">,</span> { <span class="dt">style</span><span class="op">:</span> <span class="vs">`width:</span><span class="sc">${</span>width<span class="op">/</span><span class="fl">1.5</span><span class="sc">}</span><span class="vs">px;height:</span><span class="sc">${</span>width <span class="op">/</span> <span class="dv">2</span><span class="sc">}</span><span class="vs">px`</span> })<span class="op">;</span></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="kw">yield</span> container<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-8" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="91" data-source-offset="-389"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 90;"><span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>map <span class="op">=</span> L<span class="op">.</span><span class="fu">map</span>(container<span class="op">,</span> {</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>  <span class="dt">center</span><span class="op">:</span> [<span class="op">-</span><span class="fl">34.6037</span><span class="op">,</span> <span class="op">-</span><span class="fl">58.3816</span>]<span class="op">,</span></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>  <span class="dt">scrollWheelZoom</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">mapAmba</span>(lat<span class="op">,</span> lon<span class="op">,</span> zoom<span class="op">,</span> opacity<span class="op">,</span> basemap){</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>L<span class="op">.</span><span class="fu">tileLayer</span>(basemap<span class="op">,</span> {</span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>  <span class="dt">attribution</span><span class="op">:</span> <span class="st">'&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'</span></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>})<span class="op">.</span><span class="fu">addTo</span>(map)<span class="op">;</span></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> url_to_geotiff_file <span class="op">=</span> <span class="st">'data/amba_pc_2020-05-13_16.tif'</span><span class="op">;</span></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">getColor</span>(values) {</span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&lt;</span> <span class="op">-</span><span class="dv">50</span>) <span class="cf">return</span> <span class="st">"#0000FF"</span><span class="op">;</span></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&lt;</span> <span class="op">-</span><span class="dv">40</span>) <span class="cf">return</span> <span class="st">"#0040FF"</span><span class="op">;</span></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&lt;</span> <span class="op">-</span><span class="dv">30</span>) <span class="cf">return</span> <span class="st">"#0080FF"</span><span class="op">;</span></span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&lt;</span> <span class="op">-</span><span class="dv">20</span>) <span class="cf">return</span> <span class="st">"#00BFFF"</span><span class="op">;</span></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&lt;</span> <span class="op">-</span><span class="dv">10</span>) <span class="cf">return</span> <span class="st">"#00FFFF"</span><span class="op">;</span></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&lt;</span> <span class="dv">1</span> <span class="op">&amp;&amp;</span> values <span class="op">&gt;</span> <span class="op">-</span><span class="dv">1</span>) <span class="cf">return</span> <span class="st">"#FFFFFF"</span><span class="op">;</span></span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&gt;</span> <span class="dv">10</span>) <span class="cf">return</span> <span class="st">"#FFCC00"</span><span class="op">;</span></span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&gt;</span> <span class="dv">20</span>) <span class="cf">return</span> <span class="st">"#FF9900"</span><span class="op">;</span></span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&gt;</span> <span class="dv">30</span>) <span class="cf">return</span> <span class="st">"#FF6600"</span><span class="op">;</span></span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&gt;</span> <span class="dv">40</span>) <span class="cf">return</span> <span class="st">"#FF3300"</span><span class="op">;</span></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (values <span class="op">&gt;</span> <span class="dv">50</span>) <span class="cf">return</span> <span class="st">"#FF0000"</span><span class="op">;</span></span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fetch</span>(url_to_geotiff_file)</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">arrayBuffer</span>())</span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">then</span>(arrayBuffer <span class="kw">=&gt;</span> {</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>      <span class="fu">parseGeoraster</span>(arrayBuffer)<span class="op">.</span><span class="fu">then</span>(georaster <span class="kw">=&gt;</span> {</span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> layer <span class="op">=</span> <span class="kw">new</span> <span class="fu">GeoRasterLayer</span>({</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>          <span class="dt">georaster</span><span class="op">:</span> georaster<span class="op">,</span></span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>          <span class="dt">opacity</span><span class="op">:</span> opacity<span class="op">,</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>          <span class="dt">pixelValuesToColorFn</span><span class="op">:</span> getColor<span class="op">,</span></span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>          <span class="dt">resolution</span><span class="op">:</span> <span class="dv">64</span></span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>        })<span class="op">;</span></span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>        layer<span class="op">.</span><span class="fu">addTo</span>(map)<span class="op">;</span></span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Fit the map bounds to the raster</span></span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>        map<span class="op">.</span><span class="fu">setView</span>([lat<span class="op">,</span> lon]<span class="op">,</span> zoom)<span class="op">;</span></span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>    }) </span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>}}</span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (crTriggerIndex <span class="op">===</span> <span class="dv">0</span>) {</span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mapAmba</span>(<span class="op">-</span><span class="fl">34.6037</span><span class="op">,</span> <span class="op">-</span><span class="fl">58.3816</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="st">'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'</span>)<span class="op">;</span></span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (crTriggerIndex <span class="op">===</span> <span class="dv">1</span>) {</span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mapAmba</span>(<span class="op">-</span><span class="fl">34.6037</span><span class="op">,</span> <span class="op">-</span><span class="fl">58.3816</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fl">0.7</span><span class="op">,</span> <span class="st">'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'</span>)<span class="op">;</span></span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (crTriggerIndex <span class="op">===</span> <span class="dv">2</span>) {</span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mapAmba</span>(<span class="op">-</span><span class="fl">34.6037</span><span class="op">,</span> <span class="op">-</span><span class="fl">58.3816</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fl">0.7</span><span class="op">,</span> <span class="st">'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'</span>)<span class="op">;</span></span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mapAmba</span>(<span class="op">-</span><span class="fl">34.6037</span><span class="op">,</span> <span class="op">-</span><span class="fl">58.3816</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="st">'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'</span>)<span class="op">;</span></span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-9" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-10" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-11" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>To be continued…</p>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+</section>
+
+</main>
+<!-- /main column -->
+<script type="ojs-module-contents">
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\nmd`Active trigger: ${crTriggerIndex}`\n\nL = require(\"leaflet@1.9.4\");\nGeoTIFF = require('geotiff');\nparseGeoraster = require(\"georaster\");\nGeoRasterLayer = require(\"georaster-layer-for-leaflet\");\nhtml`<link href='${resolve('leaflet@1.9.4/dist/leaflet.css')}' rel='stylesheet' />`;\n\ncontainer = DOM.element('div', { style: `width:${width/1.5}px;height:${width / 2}px` });\nyield container;\n\nmap = L.map(container, {\n  center: [-34.6037, -58.3816],\n  scrollWheelZoom: false,\n});\n\n\nfunction mapAmba(lat, lon, zoom, opacity, basemap){\n\nL.tileLayer(basemap, {\n  attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\n}).addTo(map);\n\nconst url_to_geotiff_file = 'data/amba_pc_2020-05-13_16.tif';\n\nfunction getColor(values) {\n  if (values < -50) return \"#0000FF\";\n  if (values < -40) return \"#0040FF\";\n  if (values < -30) return \"#0080FF\";\n  if (values < -20) return \"#00BFFF\";\n  if (values < -10) return \"#00FFFF\";\n  if (values < 1 && values > -1) return \"#FFFFFF\";\n  if (values > 10) return \"#FFCC00\";\n  if (values > 20) return \"#FF9900\";\n  if (values > 30) return \"#FF6600\";\n  if (values > 40) return \"#FF3300\";\n  if (values > 50) return \"#FF0000\";\n}\n\n{\n  fetch(url_to_geotiff_file)\n    .then(response => response.arrayBuffer())\n    .then(arrayBuffer => {\n      parseGeoraster(arrayBuffer).then(georaster => {\n        var layer = new GeoRasterLayer({\n          georaster: georaster,\n          opacity: opacity,\n          pixelValuesToColorFn: getColor,\n          resolution: 64\n        });\n        layer.addTo(map);\n\n        // Fit the map bounds to the raster\n        map.setView([lat, lon], zoom);\n      });\n    }) \n}}\n\n{\nif (crTriggerIndex === 0) {\n  mapAmba(-34.6037, -58.3816, 10, 0, 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');\n} else if (crTriggerIndex === 1) {\n  mapAmba(-34.6037, -58.3816, 10, 0.7, 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');\n} else if (crTriggerIndex === 2) {\n  mapAmba(-34.6037, -58.3816, 10, 0.7, 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png');\n} else {\n  mapAmba(-34.6037, -58.3816, 10, 0.2, 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png');\n}\n}\n\n"}]}
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../..";
+window._ojs.paths.runtimeToRoot = "../../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

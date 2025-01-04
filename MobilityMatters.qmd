@@ -1,0 +1,157 @@
+---
+title: Projecting Human Mobility and Disease Data to Support Decision-Making
+format:
+  closeread-html:
+    remove-header-space: true
+    cr-style: 
+      section-background-color: '#114B5F'
+      narrative-font-family: 'Monserrat'
+      poem-font-family: 'Monserrat'
+---
+
+# Mobility Matters
+
+## People moves in Buenos Aires
+
+
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block}
+The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors.@cr-myimage
+
+Human-to-human contact is a key factor in the spread of virus as  COVID-19, especially in cities with high population density. 
+@cr-myimage
+
+:::
+
+:::{#cr-myimage}
+![](img/people_subway.jpg)
+
+:::
+::::
+
+Therefore, in 2020, when the pandemic of 2020 was declared, many governments worldwide implemented measures such as quarantine.
+
+## Quarentine
+::::{.cr-section layout="sidebar-right"}
+
+:::{.progress-block}
+In 2020, COVID-19 pandemic was declared.
+
+Many governments worldwide implemented measures such as quarantine.[@cr-txt]{highlight="cr-f1,cr-f2"}
+:::
+
+|{#cr-txt .scale-to-fill}
+|Phase 1: [Strict isolation]{#cr-f1}
+|Phase 2: [Managed isolation]{#cr-f2}
+|Phase 3: Isolation by geographic segmentation.
+|Phase 4: Isolation with progressive reopening.
+|Phase 5: Last phase search to re-establish new normality.
+
+::::
+
+
+
+## Facebook Mobility Data
+
+
+## Understansing the movement in the map
+
+::::{.cr-section}
+
+:::{.progress-block}
+1 @cr-graphic
+
+2 @cr-graphic
+
+3 @cr-graphic
+
+4 @cr-graphic
+
+5 @cr-graphic
+
+6 @cr-graphic
+:::
+
+
+:::{#cr-graphic}
+```{ojs}
+
+md`Active trigger: ${crTriggerIndex}`
+
+L = require("leaflet@1.9.4");
+GeoTIFF = require('geotiff');
+parseGeoraster = require("georaster");
+GeoRasterLayer = require("georaster-layer-for-leaflet");
+html`<link href='${resolve('leaflet@1.9.4/dist/leaflet.css')}' rel='stylesheet' />`;
+
+container = DOM.element('div', { style: `width:${width/1.5}px;height:${width / 2}px` });
+yield container;
+
+map = L.map(container, {
+  center: [-34.6037, -58.3816],
+  scrollWheelZoom: false,
+});
+
+
+function mapAmba(lat, lon, zoom, opacity, basemap){
+
+L.tileLayer(basemap, {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+const url_to_geotiff_file = 'data/amba_pc_2020-05-13_16.tif';
+
+function getColor(values) {
+  if (values < -50) return "#0000FF";
+  if (values < -40) return "#0040FF";
+  if (values < -30) return "#0080FF";
+  if (values < -20) return "#00BFFF";
+  if (values < -10) return "#00FFFF";
+  if (values < 1 && values > -1) return "#FFFFFF";
+  if (values > 10) return "#FFCC00";
+  if (values > 20) return "#FF9900";
+  if (values > 30) return "#FF6600";
+  if (values > 40) return "#FF3300";
+  if (values > 50) return "#FF0000";
+}
+
+{
+  fetch(url_to_geotiff_file)
+    .then(response => response.arrayBuffer())
+    .then(arrayBuffer => {
+      parseGeoraster(arrayBuffer).then(georaster => {
+        var layer = new GeoRasterLayer({
+          georaster: georaster,
+          opacity: opacity,
+          pixelValuesToColorFn: getColor,
+          resolution: 64
+        });
+        layer.addTo(map);
+
+        // Fit the map bounds to the raster
+        map.setView([lat, lon], zoom);
+      });
+    }) 
+}}
+
+{
+if (crTriggerIndex === 0) {
+  mapAmba(-34.6037, -58.3816, 10, 0, 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+} else if (crTriggerIndex === 1) {
+  mapAmba(-34.6037, -58.3816, 10, 0.7, 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+} else if (crTriggerIndex === 2) {
+  mapAmba(-34.6037, -58.3816, 10, 0.7, 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png');
+} else {
+  mapAmba(-34.6037, -58.3816, 10, 0.2, 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png');
+}
+}
+
+```
+
+:::
+::::
+
+To be continued...
+
+# References
