@@ -5,11 +5,12 @@ format:
     remove-header-space: true
     cr-style: 
       section-background-color: '#114B5F'
-      narrative-font-family: 'Monserrat'
-      poem-font-family: 'Monserrat'
 ---
 
 # Mobility Matters
+
+      narrative-font-family: 'Monserrat'
+      poem-font-family: 'Monserrat'
 
 ## People moves in Buenos Aires
 
@@ -17,72 +18,172 @@ format:
 ::::{.cr-section layout="overlay-center"}
 
 :::{.progress-block}
-The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors.@cr-myimage
+The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors. @cr-myimage
 
 Human-to-human contact is a key factor in the spread of virus as  COVID-19, especially in cities with high population density. 
-@cr-myimage
 
+Therefore, in 2020, when the pandemic of 2020 was declared, many governments worldwide implemented measures such as quarantine.
 :::
 
 :::{#cr-myimage}
-![](img/people_subway.jpg)
+![](img/subte.jpg)
 
 :::
 ::::
 
-Therefore, in 2020, when the pandemic of 2020 was declared, many governments worldwide implemented measures such as quarantine.
 
-## Quarentine
+## What data can we use to analyze citizen mobility in the territory?
+
 ::::{.cr-section layout="sidebar-right"}
 
 :::{.progress-block}
-In 2020, COVID-19 pandemic was declared.
+Meta/Facebook Mobility Data is available to researchers through the **Data4Good** Partner Program @cr-meta
 
-Many governments worldwide implemented measures such as quarantine.[@cr-txt]{highlight="cr-f1,cr-f2"}
+You can read more about it in the [`data4Good` WebPage](https://dataforgood.facebook.com/) . @cr-meta
 :::
 
-|{#cr-txt .scale-to-fill}
-|Phase 1: [Strict isolation]{#cr-f1}
-|Phase 2: [Managed isolation]{#cr-f2}
-|Phase 3: Isolation by geographic segmentation.
-|Phase 4: Isolation with progressive reopening.
-|Phase 5: Last phase search to re-establish new normality.
+:::{#cr-meta}
 
+
+
+
+![](img/meta_webpage.png)
+:::
+::::
+
+::: {.callout-note appearance="simple" icon='false'}
+
+## Pay Attention
+
+Using callouts is an effective way to highlight content that your reader give special consideration or attention.
+
+:::
+
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block}
+Mobile devices with a Meta app installed can capture the latitude and longitude of users' locations at a specific time. @cr-data
+
+Measures are applied to the data to ensure privacy and maintain anonymity.
+
+Using each user's location as a reference, the number of users is expressed as the sum of those sharing the same map tile. How does this work?
+
+:::
+
+:::{#cr-data}
+![](img/mujer_celular.jpg)
+
+:::
 ::::
 
 
 
 ## Facebook Mobility Data
+#### What data do researchers receive?
+
+Our variable of interest is `percentage change`, which is relative and their values indicates an increase or decrease compared to a baseline value. In this case, the baseline is the number of users from the previous year for the same date and time range.
+
+::::{.columns}
+
+:::{.column width="60%" #vcenter}
+
+1. Mapped using a **Bing tile architecture** ➡️ users are assigned to individual tiles. 
+  
+2. Data is provided in **8-hour time periods** ( 0hs - 8hs / 8hs - 16hs / 16hs - 0hs ).    
+  
+3. Variable `percent_change`: relative change in mobility compared to a baseline period. 
+
+:::
+
+:::{.column width="40%" #vcenter}
+
+![](img/tiles.jpg)
+
+:::
+:::
 
 
-## Understansing the movement in the map
+:::footer
+[Bing Maps Tile System](https://learn.microsoft.com/en-us/bingmaps/articles/bing-maps-tile-system)
+:::
+
+
+
+## From QuadKeys to raster images
 
 ::::{.cr-section}
 
 :::{.progress-block}
-1 @cr-graphic
+The **tiles** can have different sizes,
+producing maps with varying level of detail. El nivel mas simple es el nivel 1, que divide al mapa en cuatro areas iguales [@cr-tiles]{pan-to="30%,30%" scale-by="2"}
 
-2 @cr-graphic
+Each map tile is linked to a value called a QuadKey (in red). The QuadKey provides spatial information based on the level of detail. For example, if a value is associated with QuadKey 1, it represents the area in the northwest corner of the map when divided into four sections. If the QuadKey is 11, it represents the northwest corner again, but this time with the map divided into eight sections. [@cr-tiles]{pan-to="50%,50%" scale-by="1.5"}
 
-3 @cr-graphic
+Cuanto mas detallado el mapa, los Quadkeys seran mas largos, y las areas representadas mas especificas  [@cr-tiles]{pan-to="0%,0%" scale-by="1"}
+
+:::
+
+
+:::{#cr-tiles}
+![](img/bing_quadkeys.jpg){fig-align="center"}
+:::
+
+::::
+
+**QuadKeys** represent a location on a map by encoding its hierarchical 
+spatial position as a sequence of characters.
+
+:::footer
+[Bing Maps Tile System](https://learn.microsoft.com/en-us/bingmaps/articles/bing-maps-tile-system)
+:::
+
+
+
+:::footer
+[`quadkeyr` documentation](https://docs.ropensci.org/quadkeyr/)
+:::
+
+
+:::footer
+Source: [`quadkeyr` documentation - Facebook Mobility Data](https://docs.ropensci.org/quadkeyr/articles/facebook_mobility_csvs_to_raster_files.html)
+::: 
+
+
+## Understanding the movement in the map
+
+::::{.cr-section}
+
+:::{.progress-block}
+This is Buenos Aires Metropolitan Area. @cr-graphic
+
+We overlay one of the generated rasters, specifically the one from a Wednesday afternoon during Phase I of the lockdown in May 2020. Let’s observe that there are various pixel colors. What do they mean? Let’s find it out. @cr-graphic
+
+The blue-tone pixels correspond to areas that experienced a decrease in mobility relative to the same period of the previous year. The more intense the color, the more pronounced the change. Let's see which areas of the city were the most affected. @cr-graphic
 
 4 @cr-graphic
 
-5 @cr-graphic
 
-6 @cr-graphic
 :::
 
 
 :::{#cr-graphic}
+![](img/amba.png)
 ```{ojs}
+0
+/*
 
+
+
+md`Active sticky: ${crActiveSticky}`
+md`Trigger progress: ${crTriggerProgress}`
+md`Scroll direction: ${crDirection}`
+md`Progress Block progress: ${crProgressBlock}`
 md`Active trigger: ${crTriggerIndex}`
 
 L = require("leaflet@1.9.4");
-GeoTIFF = require('geotiff');
-parseGeoraster = require("georaster");
-GeoRasterLayer = require("georaster-layer-for-leaflet");
+GeoTIFF = require('geotiff@2.0.4');
+parseGeoraster = require("georaster@1.6.0");
+GeoRasterLayer = require("georaster-layer-for-leaflet@3.10.0");
 html`<link href='${resolve('leaflet@1.9.4/dist/leaflet.css')}' rel='stylesheet' />`;
 
 container = DOM.element('div', { style: `width:${width/1.5}px;height:${width / 2}px` });
@@ -90,17 +191,9 @@ yield container;
 
 map = L.map(container, {
   center: [-34.6037, -58.3816],
+  zoom: 10,
   scrollWheelZoom: false,
 });
-
-
-function mapAmba(lat, lon, zoom, opacity, basemap){
-
-L.tileLayer(basemap, {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-const url_to_geotiff_file = 'data/amba_pc_2020-05-13_16.tif';
 
 function getColor(values) {
   if (values < -50) return "#0000FF";
@@ -108,13 +201,31 @@ function getColor(values) {
   if (values < -30) return "#0080FF";
   if (values < -20) return "#00BFFF";
   if (values < -10) return "#00FFFF";
-  if (values < 1 && values > -1) return "#FFFFFF";
+  if (values < 1 && values > -1) return "#FFFFFF"; // white
   if (values > 10) return "#FFCC00";
   if (values > 20) return "#FF9900";
   if (values > 30) return "#FF6600";
   if (values > 40) return "#FF3300";
   if (values > 50) return "#FF0000";
 }
+
+function getCold(values) {
+  if (values < -50) return "#0000FF";
+  if (values < -40) return "#0040FF";
+  if (values < -30) return "#0080FF";
+  if (values < -20) return "#00BFFF";
+  if (values < -10) return "#00FFFF";
+  if (values > -1) return "#FFFFFF00"; // transparent
+}
+
+
+function mapAmba(lat, lon, zoom, opa, basemap, colorfun){
+
+L.tileLayer(basemap, {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+const url_to_geotiff_file = 'static/amba_pc_2020-05-13_16.tif';
 
 {
   fetch(url_to_geotiff_file)
@@ -123,8 +234,8 @@ function getColor(values) {
       parseGeoraster(arrayBuffer).then(georaster => {
         var layer = new GeoRasterLayer({
           georaster: georaster,
-          opacity: opacity,
-          pixelValuesToColorFn: getColor,
+          opacity: opa,
+          pixelValuesToColorFn: colorfun,
           resolution: 64
         });
         layer.addTo(map);
@@ -135,20 +246,154 @@ function getColor(values) {
     }) 
 }}
 
+
 {
-if (crTriggerIndex === 0) {
-  mapAmba(-34.6037, -58.3816, 10, 0, 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-} else if (crTriggerIndex === 1) {
-  mapAmba(-34.6037, -58.3816, 10, 0.7, 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-} else if (crTriggerIndex === 2) {
-  mapAmba(-34.6037, -58.3816, 10, 0.7, 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png');
+if (crTriggerIndex === 5) {
+  mapAmba(-34.6037, -58.3816, 10, 0, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getColor);
+} else if (crTriggerIndex === 6) {
+  mapAmba(-34.6037, -58.3816, 10, 0.3, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getColor);
+}  else if (crTriggerIndex === 7) {
+  mapAmba(-34.6037, -58.3816, 10, 0.5, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getCold);
+}  else if (crTriggerIndex === 5) {
+  mapAmba(-34.5912, -58.3717, 15, 0.7, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getCold);
 } else {
-  mapAmba(-34.6037, -58.3816, 10, 0.2, 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png');
+  mapAmba(-34.6037, -58.3816, 15, 0.4, 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', getCold);
+} 
 }
-}
+*/
 
 ```
+:::
+::::
 
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block}
+The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors. @cr-myimage2
+
+Human-to-human contact is a key factor in the spread of virus as  COVID-19, especially in cities with high population density. 
+:::
+
+:::{#cr-myimage2}
+![Obelisco](img/covid.jpg)
+:::
+::::
+
+::::{.cr-section}
+:::{.progress-block}
+This is Buenos Aires Metropolitan Area. @cr-graphic3
+
+We overlay one of the generated rasters, specifically the one from a Wednesday afternoon during Phase I of the lockdown in May 2020. Let’s observe that there are various pixel colors. What do they mean? Let’s find it out. @cr-graphic3
+
+The blue-tone pixels correspond to areas that experienced a decrease in mobility relative to the same period of the previous year. The more intense the color, the more pronounced the change. Let's see which areas of the city were the most affected. [@cr-graphic3]{pan-to="30%,30%" scale-by="2"}
+
+4  [@cr-graphic3]{pan-to="50%,50%" scale-by="2"}
+
+
+:::
+
+
+:::{#cr-graphic3}
+![](img/amba_raster.png)
+:::
+::::
+
+
+::::{.cr-section}
+:::{.progress-block}
+This is Buenos Aires Metropolitan Area. @cr-azul1
+
+We overlay one of the generated rasters, specifically the one from a Wednesday afternoon during Phase I of the lockdown in May 2020. Let’s observe that there are various pixel colors. What do they mean? Let’s find it out. @cr-azul1
+
+The blue-tone pixels correspond to areas that experienced a decrease in mobility relative to the same period of the previous year. The more intense the color, the more pronounced the change. Let's see which areas of the city were the most affected. [@cr-azul1]{pan-to="30%,30%" scale-by="2"}
+
+4  [@cr-azul1]{pan-to="50%,50%" scale-by="2"}
+
+
+:::
+
+
+:::{#cr-azul1}
+![](img/area_azul1.png)
+:::
+::::
+
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block}
+The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors. @cr-bsas
+
+Human-to-human contact is a key factor in the spread of virus as  COVID-19, especially in cities with high population density. 
+:::
+
+:::{#cr-bsas}
+![Obelisco](img/buenosaires_pandemia.jpg)
+:::
+::::
+
+::::{.cr-section}
+:::{.progress-block}
+This is Buenos Aires Metropolitan Area. @cr-azul2
+
+We overlay one of the generated rasters, specifically the one from a Wednesday afternoon during Phase I of the lockdown in May 2020. Let’s observe that there are various pixel colors. What do they mean? Let’s find it out. @cr-azul2
+
+The blue-tone pixels correspond to areas that experienced a decrease in mobility relative to the same period of the previous year. The more intense the color, the more pronounced the change. Let's see which areas of the city were the most affected. [@cr-azul2]{pan-to="30%,30%" scale-by="2"}
+
+4  [@cr-azul1]{pan-to="50%,50%" scale-by="2"}
+
+
+:::
+
+
+:::{#cr-azul2}
+![](img/area_azul2.png)
+:::
+::::
+
+
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block}
+The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors. @cr-aero
+
+Human-to-human contact is a key factor in the spread of virus as COVID-19, especially in cities with high population density. 
+:::
+
+:::{#cr-aero}
+![Obelisco](img/aeropuerto.jpg){width=100%}
+:::
+::::
+
+::::{.cr-section}
+:::{.progress-block}
+This is Buenos Aires Metropolitan Area. @cr-naranja
+
+We overlay one of the generated rasters, specifically the one from a Wednesday afternoon during Phase I of the lockdown in May 2020. Let’s observe that there are various pixel colors. What do they mean? Let’s find it out. @cr-naranja
+
+The blue-tone pixels correspond to areas that experienced a decrease in mobility relative to the same period of the previous year. The more intense the color, the more pronounced the change. Let's see which areas of the city were the most affected. [@cr-naranja]{pan-to="30%,30%" scale-by="2"}
+
+4  [@cr-naranja]{pan-to="50%,50%" scale-by="2"}
+
+
+:::
+
+
+:::{#cr-naranja}
+![](img/amba_raster.png)
+:::
+::::
+
+
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block}
+The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors. @cr-ventanas
+
+Human-to-human contact is a key factor in the spread of virus as COVID-19, especially in cities with high population density. @cr-ventanas
+:::
+
+:::{#cr-ventanas}
+![Obelisco](img/ventanas.jpg)
 :::
 ::::
 
