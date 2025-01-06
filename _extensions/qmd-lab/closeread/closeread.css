@@ -253,7 +253,7 @@ body.cr-removeheaderspace #quarto-content main#quarto-document-content .quarto-t
   --cr-narrative-background-color-overlay: #708090e1;
   --cr-narrative-text-color-overlay: white;
   --cr-narrative-background-color-sidebar: transparent;
-  --cr-narrative-text-color-sidebar: black;
+  --cr-narrative-text-color-sidebar: white;
   --cr-narrative-border-radius: 1em;
   --cr-narrative-overlay-max-width: 527.98px;
   --cr-narrative-overlay-min-width: none;

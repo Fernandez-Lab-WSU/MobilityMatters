@@ -2,5 +2,3 @@ project:
   title: "closeread"
 execute:
   freeze: auto
-files:
-  - "static/amba_pc_2020-05-13_16.tif"

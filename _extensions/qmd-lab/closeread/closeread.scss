@@ -46,7 +46,7 @@
           margin-bottom: 0;
         }
       }
-      
+
       &:has(.cr-spacer) {
         visibility: hidden;
         padding-block: 0;
@@ -79,13 +79,13 @@
           transform 1s ease-in-out,
           transform-origin 1s ease-in-out;
       }
-      
+
       .sticky:has(.line-block) {
         font-family: var(--cr-poem-font-family);
         transition:
           transform .8s ease-in-out;
       }
-      
+
       .sticky:has(.line-block) {
         font-family: var(--cr-poem-font-family);
         transition:
@@ -100,42 +100,42 @@
       // show active stickies
       .cr-active {
         opacity: 1;
-        
+
         // -- Code Blocks -- //
         // if the code cell contains highlighted code, dim it
         &.cr-hl-within .sourceCode span[id^="cb"] {
           opacity: .3;
-          
+
           transition:
             opacity linear 0.3s;
-          
+
           // while keeping the highlighted lines bright
           &.cr-hl{
             opacity: 1;
-            
+
             transition:
             opacity linear 0.3s;
           }
         }
-        
+
         // -- Line Blocks -- //
         // if the line block contains highlighted lines, lighten text
         &.cr-hl-within div.line-block span[id^="lb"]{
           color: rgba(0, 0, 0, 0.4);
-          
+
           transition: color .7s linear;
-          
+
           // while keeping the highlighted lines black
           &.cr-hl{
             color: rgba(0, 0, 0, 1);
-            
+
             transition: color .7s linear;
           }
-          
+
           // as well as any spans
           span.cr-hl{
             color: rgba(0, 0, 0, 1);
-            
+
             transition: color .7s linear;
           }
         }
@@ -153,13 +153,13 @@
   .cr-section.overlay-right,
   .cr-section.overlay-center {
     grid-template-columns: 1fr;
-    
+
     .narrative-col {
       grid-column: 1;
       z-index: 1;
       margin-inline: auto;
       background-color: transparent;
-      
+
       .narrative {
         background-color: var(--cr-narrative-background-color-overlay);
         color: var(--cr-narrative-text-color-overlay);
@@ -188,7 +188,7 @@
     transition: opacity 0.5s ease-in-out;
     max-width: var(--cr-narrative-overlay-max-width);
     min-width: var(--cr-narrative-overlay-min-width);
-    
+
     .narrative {
       background-color: var(--cr-narrative-background-color-overlay);
       color: var(--cr-narrative-text-color-overlay);
@@ -247,7 +247,7 @@
     grid-column: 2;
     margin-inline: 0;
     background-color: var(--cr-narrative-background-color-sidebar);
-    
+
     .narrative {
       padding: 0 0.75em;
       color: var(--cr-narrative-text-color-sidebar);
@@ -266,7 +266,7 @@
 .presentation-mode.sidebar-left,
 .presentation-mode.sidebar-right {
   grid-template-columns: 1fr !important;
-  
+
   .narrative-col {
     grid-column: 1 !important;
     z-index: 1 !important;
@@ -274,7 +274,7 @@
     opacity: 0 !important;
     transition: opacity 0.5s ease-in-out;
   }
-  
+
   .sticky-col {
     grid-column: 1 !important;
   }
@@ -283,13 +283,13 @@
 /* debug styles */
 
 body.cr-debug {
-  
+
   // give stickies borders
   .cr-poem {
     background-color: #ffff0099;
     border: 1px solid orange;
   }
-  
+
   // make stickies slightly see-through
   .sticky {
     opacity: 0.8;
@@ -301,11 +301,11 @@ body.cr-debug {
       background: rgba(0, 208, 255, 0.5);
       border: 1px solid orange;
       border-radius: var(--cr-narrative-border-radius);
-      
+
       &.new-trigger {
         background: lightgreen;
       }
-    }   
+    }
   }
 
 }
@@ -317,7 +317,7 @@ body.cr-removeheaderspace {
     main#quarto-document-content {
       padding-top: 0;
       margin-top: 0;
-  
+
       .quarto-title-block {
         display: none;
       }
@@ -332,7 +332,7 @@ body.cr-removeheaderspace {
   --cr-narrative-background-color-overlay: #708090e1;
   --cr-narrative-text-color-overlay: white;
   --cr-narrative-background-color-sidebar: transparent;
-  --cr-narrative-text-color-sidebar: black;
+  --cr-narrative-text-color-sidebar: white;
   --cr-narrative-border-radius: 1em;
   --cr-narrative-overlay-max-width: 527.98px;
   --cr-narrative-overlay-min-width: none;

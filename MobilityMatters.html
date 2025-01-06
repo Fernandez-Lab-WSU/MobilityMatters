@@ -20,41 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="mobilitymatters_files/libs/clipboard/clipboard.min.js"></script>
@@ -70,8 +55,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="mobilitymatters_files/libs/quarto-contrib/intersection-observer-polyfill-1.0.0/intersection-observer.js"></script>
 <script src="mobilitymatters_files/libs/quarto-contrib/scrollama-3.2.0/scrollama.min.js"></script>
 <script src="mobilitymatters_files/libs/quarto-contrib/closeread-0.1.0/closeread.js"></script>
-<script type="module" src="mobilitymatters_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="mobilitymatters_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <meta cr-debug-mode="false">
 <meta cr-remove-header-space="true">
 
@@ -87,7 +70,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <!-- user-provided yaml closeread style options -->
       <style>
         :root {
-          --cr-section-background-color: #114B5F;
+          --cr-poem-font-family: Apple Garamond;
+--cr-section-background-color: #114B5F;
         }
       </style>
     
@@ -109,28 +93,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="mobility-matters" class="level1">
-<h1>Mobility Matters</h1>
-<pre><code>  narrative-font-family: 'Monserrat'
-  poem-font-family: 'Monserrat'</code></pre>
-<section id="people-moves-in-buenos-aires" class="level2">
-<h2 class="anchored" data-anchor-id="people-moves-in-buenos-aires">People moves in Buenos Aires</h2>
+<section id="mobility-matters." class="level1">
+<h1>Mobility Matters.</h1>
+<section id="case-study-on-how-cell-phones-can-assist-in-mapping-human-mobility-during-a-pandemic." class="level2">
+<h2 class="anchored" data-anchor-id="case-study-on-how-cell-phones-can-assist-in-mapping-human-mobility-during-a-pandemic.">Case study on how cell phones can assist in mapping human mobility during a pandemic.</h2>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
 <div class="cr-section cr-column-screen overlay-center">
 <div class="narrative-col">
 <div class="progress-block">
 <div class="trigger new-trigger" data-focus-on="cr-myimage">
 <div class="narrative">
-<p>The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors.</p>
+<p>The emergence and persistence of vector-borne diseases are shaped by a combination of ecological and human factors.</p>
 </div>
 </div>
 <div class="trigger">
 <div class="narrative">
-<p>Human-to-human contact is a key factor in the spread of virus as COVID-19, especially in cities with high population density.</p>
+<p>Human-to-human contact plays a critical role in the spread of contagious viruses like COVID-19, particularly in urban areas with high population densities.</p>
 </div>
 </div>
 <div class="trigger">
 <div class="narrative">
-<p>Therefore, in 2020, when the pandemic of 2020 was declared, many governments worldwide implemented measures such as quarantine.</p>
+<p>In 2020, the global outbreak of COVID-19 led governments around the world to adopt lockdowns to control the spread of the virus and protect public health.</p>
 </div>
 </div>
 </div>
@@ -138,50 +122,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sticky-col">
 <div class="sticky-col-stack">
 <div id="cr-myimage" class="sticky">
-<p><img src="img/subte.jpg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/subte.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><span class="citation" data-cites="subte">[<a href="#ref-subte" role="doc-biblioref">1</a>]</span></figcaption>
+</figure>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="what-data-can-we-use-to-analyze-citizen-mobility-in-the-territory" class="level2">
-<h2 class="anchored" data-anchor-id="what-data-can-we-use-to-analyze-citizen-mobility-in-the-territory">What data can we use to analyze citizen mobility in the territory?</h2>
-<div class="cr-section cr-column-screen sidebar-right">
-<div class="narrative-col">
-<div class="progress-block">
-<div class="trigger new-trigger" data-focus-on="cr-meta">
-<div class="narrative">
+</section>
+<section id="what-data-can-we-use-to-analyze-human-mobility-in-the-territory" class="level2">
+<h2 class="anchored" data-anchor-id="what-data-can-we-use-to-analyze-human-mobility-in-the-territory">What data can we use to analyze human mobility in the territory?</h2>
 <p>Meta/Facebook Mobility Data is available to researchers through the <strong>Data4Good</strong> Partner Program</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-meta">
-<div class="narrative">
-<p>You can read more about it in the <a href="https://dataforgood.facebook.com/"><code>data4Good</code> WebPage</a> .</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sticky-col">
-<div class="sticky-col-stack">
-<div id="cr-meta" class="sticky">
 <p><img src="img/meta_webpage.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Pay Attention
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Using callouts is an effective way to highlight content that your reader give special consideration or attention.</p>
-</div>
-</div>
+<p>You can read more about it in the <a href="https://dataforgood.facebook.com/"><code>data4Good</code> WebPage</a></p>
+<section id="what-do-we-mean-when-we-talk-about-metafacebook-mobility-data" class="level3">
+<h3 class="anchored" data-anchor-id="what-do-we-mean-when-we-talk-about-metafacebook-mobility-data">What do we mean when we talk about Meta/Facebook Mobility Data?</h3>
 <div class="cr-section cr-column-screen overlay-center">
 <div class="narrative-col">
 <div class="progress-block">
@@ -190,14 +149,9 @@ Pay Attention
 <p>Mobile devices with a Meta app installed can capture the latitude and longitude of users’ locations at a specific time.</p>
 </div>
 </div>
-<div class="trigger">
+<div class="trigger new-trigger" data-focus-on="cr-data">
 <div class="narrative">
-<p>Measures are applied to the data to ensure privacy and maintain anonymity.</p>
-</div>
-</div>
-<div class="trigger">
-<div class="narrative">
-<p>Using each user’s location as a reference, the number of users is expressed as the sum of those sharing the same map tile. How does this work?</p>
+<p>Using each user’s location as a reference, the increase or decrease in the number of users can be mapped to individual tiles.</p>
 </div>
 </div>
 </div>
@@ -205,101 +159,69 @@ Pay Attention
 <div class="sticky-col">
 <div class="sticky-col-stack">
 <div id="cr-data" class="sticky">
-<p><img src="img/mujer_celular.jpg" class="img-fluid"></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="facebook-mobility-data" class="level2">
-<h2 class="anchored" data-anchor-id="facebook-mobility-data">Facebook Mobility Data</h2>
-<section id="what-data-do-researchers-receive" class="level4">
-<h4 class="anchored" data-anchor-id="what-data-do-researchers-receive">What data do researchers receive?</h4>
-<p>Our variable of interest is <code>percentage change</code>, which is relative and their values indicates an increase or decrease compared to a baseline value. In this case, the baseline is the number of users from the previous year for the same date and time range.</p>
-<div class="columns">
-<div id="vcenter" class="column" style="width:60%;">
-<ol type="1">
-<li><p>Mapped using a <strong>Bing tile architecture</strong> ➡️ users are assigned to individual tiles.</p></li>
-<li><p>Data is provided in <strong>8-hour time periods</strong> ( 0hs - 8hs / 8hs - 16hs / 16hs - 0hs ).</p></li>
-<li><p>Variable <code>percent_change</code>: relative change in mobility compared to a baseline period.</p></li>
-</ol>
-</div><div id="vcenter" class="column" style="width:40%;">
-<p><img src="img/tiles.jpg" class="img-fluid"></p>
-</div>
-</div>
-<div class="footer">
-<p><a href="https://learn.microsoft.com/en-us/bingmaps/articles/bing-maps-tile-system">Bing Maps Tile System</a></p>
-</div>
-</section>
-</section>
-<section id="from-quadkeys-to-raster-images" class="level2">
-<h2 class="anchored" data-anchor-id="from-quadkeys-to-raster-images">From QuadKeys to raster images</h2>
-<div class="cr-section cr-column-screen sidebar-left">
-<div class="narrative-col">
-<div class="progress-block">
-<div class="trigger new-trigger" data-focus-on="cr-tiles" data-pan-to="30%,30%" data-scale-by="2">
-<div class="narrative">
-<p>The <strong>tiles</strong> can have different sizes, producing maps with varying level of detail. El nivel mas simple es el nivel 1, que divide al mapa en cuatro areas iguales</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-tiles" data-pan-to="50%,50%" data-scale-by="1.5">
-<div class="narrative">
-<p>Each map tile is linked to a value called a QuadKey (in red). The QuadKey provides spatial information based on the level of detail. For example, if a value is associated with QuadKey 1, it represents the area in the northwest corner of the map when divided into four sections. If the QuadKey is 11, it represents the northwest corner again, but this time with the map divided into eight sections.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-tiles" data-pan-to="0%,0%" data-scale-by="1">
-<div class="narrative">
-<p>Cuanto mas detallado el mapa, los Quadkeys seran mas largos, y las areas representadas mas especificas</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sticky-col">
-<div class="sticky-col-stack">
-<div id="cr-tiles" class="sticky">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/bing_quadkeys.jpg" class="img-fluid figure-img"></p>
+<p><img src="img/mujer_celular.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><span class="citation" data-cites="mujer_celular">[<a href="#ref-mujer_celular" role="doc-biblioref">2</a>]</span></figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p><strong>QuadKeys</strong> represent a location on a map by encoding its hierarchical spatial position as a sequence of characters.</p>
-<div class="footer">
-<p><a href="https://learn.microsoft.com/en-us/bingmaps/articles/bing-maps-tile-system">Bing Maps Tile System</a></p>
+</section>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">📱 ➡ 🗺️</h2>
+<p>Our variable of interest is <code>percentage change</code>, which is relative and their values indicates change in the number of user compared to a baseline value. In this case, the baseline are the users from the previous year for the same date and time range.</p>
+<div class="columns">
+<div id="vcenter" class="column" style="width:40%;">
+<ol type="1">
+<li><p>Mapped using <strong>Bing Tile Architecture</strong>.</p></li>
+<li><p>Data is provided on daily basis in <strong>8-hour time periods</strong>.</p></li>
+<li><p>Measures are applied to the data to ensure privacy and maintain anonymity.</p></li>
+</ol>
+</div><div id="vcenter" class="column" style="width:60%;">
+<p><img src="img/tiles.jpg" class="img-fluid"></p>
 </div>
-<div class="footer">
-<p><a href="https://docs.ropensci.org/quadkeyr/"><code>quadkeyr</code> documentation</a></p>
 </div>
-<div class="footer">
-<p>Source: <a href="https://docs.ropensci.org/quadkeyr/articles/facebook_mobility_csvs_to_raster_files.html"><code>quadkeyr</code> documentation - Facebook Mobility Data</a></p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+R package <code>quadkeyr</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To convert the data provided by Meta into an image that can be overlaid on a map, we created an R package called <code>quadkeyr</code><span class="citation" data-cites="quadkeyr">[<a href="#ref-quadkeyr" role="doc-biblioref">3</a>]</span>. You can read more about it in <a href="https://docs.ropensci.org/quadkeyr/"><code>quadkeyr</code> documentation</a></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The interpretation of Facebook/Meta data is complex and will be analyzed in greater detail in a forthcoming publication.</p>
+</div>
+</div>
 </div>
 </section>
-<section id="understanding-the-movement-in-the-map" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-the-movement-in-the-map">Understanding the movement in the map</h2>
+<section id="case-of-study" class="level2">
+<h2 class="anchored" data-anchor-id="case-of-study">Case of Study</h2>
 <div class="cr-section cr-column-screen sidebar-left">
 <div class="narrative-col">
 <div class="progress-block">
 <div class="trigger new-trigger" data-focus-on="cr-graphic">
 <div class="narrative">
-<p>This is Buenos Aires Metropolitan Area.</p>
+<p>This is the Metropolitan Area of Buenos Aires in Argentina.</p>
 </div>
 </div>
 <div class="trigger new-trigger" data-focus-on="cr-graphic">
 <div class="narrative">
-<p>We overlay one of the generated rasters, specifically the one from a Wednesday afternoon during Phase I of the lockdown in May 2020. Let’s observe that there are various pixel colors. What do they mean? Let’s find it out.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-graphic">
-<div class="narrative">
-<p>The blue-tone pixels correspond to areas that experienced a decrease in mobility relative to the same period of the previous year. The more intense the color, the more pronounced the change. Let’s see which areas of the city were the most affected.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-graphic">
-<div class="narrative">
-<p>4</p>
+<p>The Metropolitan Area of Buenos Aires spans approximately 3,833 km² and is home to 35% of the nation’s population, making it the country’s most densely inhabited region <span class="citation" data-cites="argentina_amba">[<a href="#ref-argentina_amba" role="doc-biblioref">4</a>]</span>.</p>
 </div>
 </div>
 </div>
@@ -308,105 +230,6 @@ Pay Attention
 <div class="sticky-col-stack">
 <div id="cr-graphic" class="sticky">
 <p><img src="img/amba.png" class="img-fluid"></p>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="171" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 170;"><span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span>
-<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
-<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a><span class="co">md`Active sticky: ${crActiveSticky}`</span></span>
-<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a><span class="co">md`Trigger progress: ${crTriggerProgress}`</span></span>
-<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a><span class="co">md`Scroll direction: ${crDirection}`</span></span>
-<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a><span class="co">md`Progress Block progress: ${crProgressBlock}`</span></span>
-<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a><span class="co">md`Active trigger: ${crTriggerIndex}`</span></span>
-<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a><span class="co">L = require("leaflet@1.9.4");</span></span>
-<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a><span class="co">GeoTIFF = require('geotiff@2.0.4');</span></span>
-<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a><span class="co">parseGeoraster = require("georaster@1.6.0");</span></span>
-<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a><span class="co">GeoRasterLayer = require("georaster-layer-for-leaflet@3.10.0");</span></span>
-<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="co">html`&lt;link href='${resolve('leaflet@1.9.4/dist/leaflet.css')}' rel='stylesheet' /&gt;`;</span></span>
-<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a><span class="co">container = DOM.element('div', { style: `width:${width/1.5}px;height:${width / 2}px` });</span></span>
-<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a><span class="co">yield container;</span></span>
-<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a><span class="co">map = L.map(container, {</span></span>
-<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a><span class="co">  center: [-34.6037, -58.3816],</span></span>
-<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a><span class="co">  zoom: 10,</span></span>
-<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a><span class="co">  scrollWheelZoom: false,</span></span>
-<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a><span class="co">});</span></span>
-<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a><span class="co">function getColor(values) {</span></span>
-<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; -50) return "#0000FF";</span></span>
-<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; -40) return "#0040FF";</span></span>
-<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; -30) return "#0080FF";</span></span>
-<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; -20) return "#00BFFF";</span></span>
-<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; -10) return "#00FFFF";</span></span>
-<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; 1 &amp;&amp; values &gt; -1) return "#FFFFFF"; // white</span></span>
-<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &gt; 10) return "#FFCC00";</span></span>
-<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &gt; 20) return "#FF9900";</span></span>
-<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &gt; 30) return "#FF6600";</span></span>
-<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &gt; 40) return "#FF3300";</span></span>
-<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &gt; 50) return "#FF0000";</span></span>
-<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span>
-<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a><span class="co">function getCold(values) {</span></span>
-<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; -50) return "#0000FF";</span></span>
-<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; -40) return "#0040FF";</span></span>
-<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; -30) return "#0080FF";</span></span>
-<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; -20) return "#00BFFF";</span></span>
-<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &lt; -10) return "#00FFFF";</span></span>
-<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a><span class="co">  if (values &gt; -1) return "#FFFFFF00"; // transparent</span></span>
-<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span>
-<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a><span class="co">function mapAmba(lat, lon, zoom, opa, basemap, colorfun){</span></span>
-<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a><span class="co">L.tileLayer(basemap, {</span></span>
-<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a><span class="co">  attribution: '&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'</span></span>
-<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a><span class="co">}).addTo(map);</span></span>
-<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a><span class="co">const url_to_geotiff_file = 'static/amba_pc_2020-05-13_16.tif';</span></span>
-<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a><span class="co">{</span></span>
-<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a><span class="co">  fetch(url_to_geotiff_file)</span></span>
-<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a><span class="co">    .then(response =&gt; response.arrayBuffer())</span></span>
-<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a><span class="co">    .then(arrayBuffer =&gt; {</span></span>
-<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a><span class="co">      parseGeoraster(arrayBuffer).then(georaster =&gt; {</span></span>
-<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a><span class="co">        var layer = new GeoRasterLayer({</span></span>
-<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a><span class="co">          georaster: georaster,</span></span>
-<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a><span class="co">          opacity: opa,</span></span>
-<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a><span class="co">          pixelValuesToColorFn: colorfun,</span></span>
-<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a><span class="co">          resolution: 64</span></span>
-<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a><span class="co">        });</span></span>
-<span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a><span class="co">        layer.addTo(map);</span></span>
-<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a><span class="co">        // Fit the map bounds to the raster</span></span>
-<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a><span class="co">        map.setView([lat, lon], zoom);</span></span>
-<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a><span class="co">      });</span></span>
-<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a><span class="co">    }) </span></span>
-<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a><span class="co">}}</span></span>
-<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a><span class="co">{</span></span>
-<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a><span class="co">if (crTriggerIndex === 5) {</span></span>
-<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a><span class="co">  mapAmba(-34.6037, -58.3816, 10, 0, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getColor);</span></span>
-<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a><span class="co">} else if (crTriggerIndex === 6) {</span></span>
-<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a><span class="co">  mapAmba(-34.6037, -58.3816, 10, 0.3, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getColor);</span></span>
-<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a><span class="co">}  else if (crTriggerIndex === 7) {</span></span>
-<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a><span class="co">  mapAmba(-34.6037, -58.3816, 10, 0.5, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getCold);</span></span>
-<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a><span class="co">}  else if (crTriggerIndex === 5) {</span></span>
-<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a><span class="co">  mapAmba(-34.5912, -58.3717, 15, 0.7, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getCold);</span></span>
-<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a><span class="co">} else {</span></span>
-<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a><span class="co">  mapAmba(-34.6037, -58.3816, 15, 0.4, 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', getCold);</span></span>
-<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a><span class="co">} </span></span>
-<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span>
-<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-1" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -416,12 +239,12 @@ Pay Attention
 <div class="progress-block">
 <div class="trigger new-trigger" data-focus-on="cr-myimage2">
 <div class="narrative">
-<p>The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors.</p>
+<p>The first case of COVID-19 in Argentina was on March 3rd by a patient that had returned from Italy, where a significant outbreak was ongoing.</p>
 </div>
 </div>
 <div class="trigger">
 <div class="narrative">
-<p>Human-to-human contact is a key factor in the spread of virus as COVID-19, especially in cities with high population density.</p>
+<p>On March 20th, the Government established Social, Preventive and Obligatory Isolation initially until March 31th, but it was then extended 5 times, until June 7th <span class="citation" data-cites="ramirez2022">[<a href="#ref-ramirez2022" role="doc-biblioref">5</a>]</span></p>
 </div>
 </div>
 </div>
@@ -432,7 +255,7 @@ Pay Attention
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/covid.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Obelisco</figcaption>
+<figcaption class="figure-caption"><span class="citation" data-cites="covid">[<a href="#ref-covid" role="doc-biblioref">6</a>]</span></figcaption>
 </figure>
 </div>
 </div>
@@ -444,22 +267,27 @@ Pay Attention
 <div class="progress-block">
 <div class="trigger new-trigger" data-focus-on="cr-graphic3">
 <div class="narrative">
-<p>This is Buenos Aires Metropolitan Area.</p>
+<p>Let’s explore Facebook mobility data.</p>
 </div>
 </div>
 <div class="trigger new-trigger" data-focus-on="cr-graphic3">
 <div class="narrative">
-<p>We overlay one of the generated rasters, specifically the one from a Wednesday afternoon during Phase I of the lockdown in May 2020. Let’s observe that there are various pixel colors. What do they mean? Let’s find it out.</p>
+<p>We overlay one of the generated rasters, specifically from Phase 3 of Social, Preventive, and Mandatory Isolation in May 2020 <span class="citation" data-cites="ramirez2022">[<a href="#ref-ramirez2022" role="doc-biblioref">5</a>]</span>. Notice the variety of pixel colors—what do they represent? Let’s dive in.</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-focus-on="cr-graphic3" data-pan-to="30%,30%" data-scale-by="2">
+<div class="trigger">
 <div class="narrative">
-<p>The blue-tone pixels correspond to areas that experienced a decrease in mobility relative to the same period of the previous year. The more intense the color, the more pronounced the change. Let’s see which areas of the city were the most affected.</p>
+<p>The blue-toned pixels indicate areas where mobility decreased compared to the same period in the previous year. The darker the color, the greater the reduction in mobility.</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-focus-on="cr-graphic3" data-pan-to="50%,50%" data-scale-by="2">
+<div class="trigger new-trigger" data-pan-to="20%,-30%" data-focus-on="cr-graphic3" data-scale-by="2">
 <div class="narrative">
-<p>4</p>
+<p>Without going into detail, we can observe two significant areas where human mobility decreased compared to the same period in 2019.</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-pan-to="20%,-30%" data-focus-on="cr-graphic3" data-scale-by="2">
+<div class="narrative">
+<p><strong>Can you imagine what these areas correspond to?</strong></p>
 </div>
 </div>
 </div>
@@ -472,27 +300,55 @@ Pay Attention
 </div>
 </div>
 </div>
+<div class="cr-section cr-column-screen overlay-center">
+<div class="narrative-col">
+<div class="progress-block">
+<div class="trigger new-trigger" data-focus-on="cr-obelisco">
+<div class="narrative">
+<p><strong>President’s Speech (fragment)</strong></p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-obelisco">
+<div class="narrative">
+<p>“The Metropolitan Area of Buenos Aires is a critical region. It is the most populous area, making it more susceptible to contagion as a large number of people live there.<span class="citation" data-cites="cuarentenamayo">[<a href="#ref-cuarentenamayo" role="doc-biblioref">7</a>]</span>”</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-obelisco">
+<div class="narrative">
+<p>“If one keeps a distance from others, wears a mask, keeps their hands clean at all times, and avoids touching their face, the chances of infection are very low. These measures, however, are very difficult to follow if you live in a crowded place, or if you board a packed train or bus.<span class="citation" data-cites="cuarentenamayo">[<a href="#ref-cuarentenamayo" role="doc-biblioref">7</a>]</span>”</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-obelisco">
+<div class="narrative">
+<p>“In Buenos Aires, to open businesses or industries, permission must be requested from the government, which will assess if the necessary health conditions are met for that activity to resume (…) Companies that wish to reopen must arrange transportation for their workers to the workplace.<span class="citation" data-cites="cuarentenamayo">[<a href="#ref-cuarentenamayo" role="doc-biblioref">7</a>]</span>”</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sticky-col">
+<div class="sticky-col-stack">
+<div id="cr-obelisco" class="sticky">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/buenosaires_pandemia.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><span class="citation" data-cites="obelisco">[<a href="#ref-obelisco" role="doc-biblioref">8</a>]</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="cr-section cr-column-screen sidebar-left">
 <div class="narrative-col">
 <div class="progress-block">
 <div class="trigger new-trigger" data-focus-on="cr-azul1">
 <div class="narrative">
-<p>This is Buenos Aires Metropolitan Area.</p>
+<p>If we move towards the first area of blue pixels, we will see it corresponds to what is known as Microcentro Porteño. Informally, Microcentro refers to an area characterized by the concentration of administrative and office buildings.</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-focus-on="cr-azul1">
+<div class="trigger new-trigger" data-pan-to="-20%,-30%" data-focus-on="cr-azul1" data-scale-by="2">
 <div class="narrative">
-<p>We overlay one of the generated rasters, specifically the one from a Wednesday afternoon during Phase I of the lockdown in May 2020. Let’s observe that there are various pixel colors. What do they mean? Let’s find it out.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-azul1" data-pan-to="30%,30%" data-scale-by="2">
-<div class="narrative">
-<p>The blue-tone pixels correspond to areas that experienced a decrease in mobility relative to the same period of the previous year. The more intense the color, the more pronounced the change. Let’s see which areas of the city were the most affected.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-azul1" data-pan-to="50%,50%" data-scale-by="2">
-<div class="narrative">
-<p>4</p>
+<p>Microcentro is a very busy area but in the raster image we can see that during isolation experienced reduced activity</p>
 </div>
 </div>
 </div>
@@ -508,25 +364,30 @@ Pay Attention
 <div class="cr-section cr-column-screen overlay-center">
 <div class="narrative-col">
 <div class="progress-block">
-<div class="trigger new-trigger" data-focus-on="cr-bsas">
+<div class="trigger new-trigger" data-focus-on="cr-aero">
 <div class="narrative">
-<p>The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors.</p>
+<p><strong>Fragment from a News Article</strong></p>
 </div>
 </div>
-<div class="trigger">
+<div class="trigger new-trigger" data-focus-on="cr-aero">
 <div class="narrative">
-<p>Human-to-human contact is a key factor in the spread of virus as COVID-19, especially in cities with high population density.</p>
+<p>“For the second consecutive month, air transportation in Argentina recorded historic lows in passenger traffic due to the COVID-19 pandemic and the resulting restrictions on interjurisdictional movement imposed by the national government.<span class="citation" data-cites="aviacionline2020">[<a href="#ref-aviacionline2020" role="doc-biblioref">9</a>]</span>”</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-aero">
+<div class="narrative">
+<p>“A total of just 21,232 passengers traveled, with 5,515 on domestic flights and 15,717 on international flights, according to preliminary data from the monthly report prepared by the National Civil Aviation Administration<span class="citation" data-cites="aviacionline2020">[<a href="#ref-aviacionline2020" role="doc-biblioref">9</a>]</span>”.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sticky-col">
 <div class="sticky-col-stack">
-<div id="cr-bsas" class="sticky">
+<div id="cr-aero" class="sticky">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/buenosaires_pandemia.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Obelisco</figcaption>
+<p><img src="img/aeropuerto.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption"><span class="citation" data-cites="aeropuerto">[<a href="#ref-aeropuerto" role="doc-biblioref">10</a>]</span></figcaption>
 </figure>
 </div>
 </div>
@@ -538,22 +399,12 @@ Pay Attention
 <div class="progress-block">
 <div class="trigger new-trigger" data-focus-on="cr-azul2">
 <div class="narrative">
-<p>This is Buenos Aires Metropolitan Area.</p>
+<p>The second area with the highest density of blue pixels observed in the first image corresponds to Ministro Pistarini International Airport.</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-focus-on="cr-azul2">
+<div class="trigger new-trigger" data-pan-to="40%,-20%" data-focus-on="cr-azul2" data-scale-by="2">
 <div class="narrative">
-<p>We overlay one of the generated rasters, specifically the one from a Wednesday afternoon during Phase I of the lockdown in May 2020. Let’s observe that there are various pixel colors. What do they mean? Let’s find it out.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-azul2" data-pan-to="30%,30%" data-scale-by="2">
-<div class="narrative">
-<p>The blue-tone pixels correspond to areas that experienced a decrease in mobility relative to the same period of the previous year. The more intense the color, the more pronounced the change. Let’s see which areas of the city were the most affected.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-azul1" data-pan-to="50%,50%" data-scale-by="2">
-<div class="narrative">
-<p>4</p>
+<p>Again, in the raster image, a marked decrease in mobility in this area can be observed.</p>
 </div>
 </div>
 </div>
@@ -569,25 +420,35 @@ Pay Attention
 <div class="cr-section cr-column-screen overlay-center">
 <div class="narrative-col">
 <div class="progress-block">
-<div class="trigger new-trigger" data-focus-on="cr-aero">
+<div class="trigger new-trigger" data-focus-on="cr-ventanas">
 <div class="narrative">
-<p>The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors.</p>
+<p><strong>President’s Speech (fragment)</strong></p>
 </div>
 </div>
-<div class="trigger">
+<div class="trigger new-trigger" data-focus-on="cr-ventanas">
 <div class="narrative">
-<p>Human-to-human contact is a key factor in the spread of virus as COVID-19, especially in cities with high population density.</p>
+<p>“I ask my fellow residents of Buenos Aires City and the neighboring province to remember that this area carries the highest risk of the pandemic, and that’s why we must be extra cautious. We cannot go out without a reason.<span class="citation" data-cites="cuarentenamayo">[<a href="#ref-cuarentenamayo" role="doc-biblioref">7</a>]</span>”</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-ventanas">
+<div class="narrative">
+<p>“We are the ones seeking out the virus; it doesn’t come looking for us in our homes. The more we move around, the higher the risk becomes.<span class="citation" data-cites="cuarentenamayo">[<a href="#ref-cuarentenamayo" role="doc-biblioref">7</a>]</span>”</p>
+</div>
+</div>
+<div class="trigger new-trigger" data-focus-on="cr-ventanas">
+<div class="narrative">
+<p>“Interjurisdictional transportation (the movement of people between cities) remains prohibited, except for essential workers<span class="citation" data-cites="cuarentenamayo">[<a href="#ref-cuarentenamayo" role="doc-biblioref">7</a>]</span>”.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sticky-col">
 <div class="sticky-col-stack">
-<div id="cr-aero" class="sticky">
+<div id="cr-ventanas" class="sticky">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/aeropuerto.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">Obelisco</figcaption>
+<p><img src="img/ventanas.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><span class="citation" data-cites="ventanas">[<a href="#ref-ventanas" role="doc-biblioref">11</a>]</span></figcaption>
 </figure>
 </div>
 </div>
@@ -599,22 +460,12 @@ Pay Attention
 <div class="progress-block">
 <div class="trigger new-trigger" data-focus-on="cr-naranja">
 <div class="narrative">
-<p>This is Buenos Aires Metropolitan Area.</p>
+<p>Finally, most of the areas shaded in orange represent an increase in human mobility compared to baseline values.</p>
 </div>
 </div>
 <div class="trigger new-trigger" data-focus-on="cr-naranja">
 <div class="narrative">
-<p>We overlay one of the generated rasters, specifically the one from a Wednesday afternoon during Phase I of the lockdown in May 2020. Let’s observe that there are various pixel colors. What do they mean? Let’s find it out.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-naranja" data-pan-to="30%,30%" data-scale-by="2">
-<div class="narrative">
-<p>The blue-tone pixels correspond to areas that experienced a decrease in mobility relative to the same period of the previous year. The more intense the color, the more pronounced the change. Let’s see which areas of the city were the most affected.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-naranja" data-pan-to="50%,50%" data-scale-by="2">
-<div class="narrative">
-<p>4</p>
+<p>This could indicate that people are moving within their local regions, or staying at home</p>
 </div>
 </div>
 </div>
@@ -627,54 +478,52 @@ Pay Attention
 </div>
 </div>
 </div>
-<div class="cr-section cr-column-screen overlay-center">
-<div class="narrative-col">
-<div class="progress-block">
-<div class="trigger new-trigger" data-focus-on="cr-ventanas">
-<div class="narrative">
-<p>The emergence and persistence of vector-borne diseases is influenced by both ecological and human factors.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-ventanas">
-<div class="narrative">
-<p>Human-to-human contact is a key factor in the spread of virus as COVID-19, especially in cities with high population density.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sticky-col">
-<div class="sticky-col-stack">
-<div id="cr-ventanas" class="sticky">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/ventanas.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Obelisco</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>To be continued…</p>
+<section id="to-be-continued" class="level3">
+<h3 class="anchored" data-anchor-id="to-be-continued">To be continued…</h3>
 </section>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+</section>
+<section id="references" class="level1 unnumbered">
+
+
 </section>
 
-</main>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-subte" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Goddard_Photography (2017) <a href="https://[InsertStockPhotoWebsiteHere]">Stock photo ID: 692084806</a></div>
+</div>
+<div id="ref-mujer_celular" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Jacobi A (2021) <a href="https://[InsertStockPhotoWebsiteHere]">Stock photo ID: 1318915599</a></div>
+</div>
+<div id="ref-quadkeyr" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">D’Andrea F, Fernandez P (2024) Quadkeyr: Tools for converting QuadKey-identified datasets (microsoft’s bing maps tile system) into raster images and analyzing meta (facebook) mobility data. Journal of Open Source Software 9(95):6500</div>
+</div>
+<div id="ref-argentina_amba" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Argentina Government (n.d.) Área metropolitana de buenos aires (AMBA)</div>
+</div>
+<div id="ref-ramirez2022" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Ramı́rez ML, Martinez SM, Valle Bessone C del, Allemandi DA, Quinteros DA (2022) COVID-19: Epidemiological situation of argentina and its neighbor countries after three months of pandemic. Disaster medicine and public health preparedness 16(5):1935–1941</div>
+</div>
+<div id="ref-covid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Kızılkaya E (2020) Stock photo ID: 1247272494</div>
+</div>
+<div id="ref-cuarentenamayo" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Ministerio de Salud RA (2020) <a href="https://www.argentina.gob.ar/noticias/alberto-fernandez-extiende-la-cuarentena-hasta-el-24-de-mayo">Alberto fernández extiende la cuarentena hasta el 24 de mayo</a></div>
+</div>
+<div id="ref-obelisco" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Kitayama E (2020) <a href="https://www.istockphoto.com/photo/argentina-gm1213960638-1213960638">Stock photo ID: 1213960638</a></div>
+</div>
+<div id="ref-aviacionline2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Aviación OnLine (2020) Durante mayo, el transporte aéreo movilizó apenas 21 mil pasajeros. <a href="https://www.aviacionline.com/argentina-durante-mayo-el-transporte-aereo-movilizo-apenas-21-mil-pasajeros">https://www.aviacionline.com/argentina-durante-mayo-el-transporte-aereo-movilizo-apenas-21-mil-pasajeros</a></div>
+</div>
+<div id="ref-aeropuerto" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Strelkov S (2023) Stock photo ID: 1770098439</div>
+</div>
+<div id="ref-ventanas" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Kitayama E (2020) Stock photo ID: 1214814959</div>
+</div>
+</div></section></div></main>
 <!-- /main column -->
-<script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"0\n/*\n\n\n\nmd`Active sticky: ${crActiveSticky}`\nmd`Trigger progress: ${crTriggerProgress}`\nmd`Scroll direction: ${crDirection}`\nmd`Progress Block progress: ${crProgressBlock}`\nmd`Active trigger: ${crTriggerIndex}`\n\nL = require(\"leaflet@1.9.4\");\nGeoTIFF = require('geotiff@2.0.4');\nparseGeoraster = require(\"georaster@1.6.0\");\nGeoRasterLayer = require(\"georaster-layer-for-leaflet@3.10.0\");\nhtml`<link href='${resolve('leaflet@1.9.4/dist/leaflet.css')}' rel='stylesheet' />`;\n\ncontainer = DOM.element('div', { style: `width:${width/1.5}px;height:${width / 2}px` });\nyield container;\n\nmap = L.map(container, {\n  center: [-34.6037, -58.3816],\n  zoom: 10,\n  scrollWheelZoom: false,\n});\n\nfunction getColor(values) {\n  if (values < -50) return \"#0000FF\";\n  if (values < -40) return \"#0040FF\";\n  if (values < -30) return \"#0080FF\";\n  if (values < -20) return \"#00BFFF\";\n  if (values < -10) return \"#00FFFF\";\n  if (values < 1 && values > -1) return \"#FFFFFF\"; // white\n  if (values > 10) return \"#FFCC00\";\n  if (values > 20) return \"#FF9900\";\n  if (values > 30) return \"#FF6600\";\n  if (values > 40) return \"#FF3300\";\n  if (values > 50) return \"#FF0000\";\n}\n\nfunction getCold(values) {\n  if (values < -50) return \"#0000FF\";\n  if (values < -40) return \"#0040FF\";\n  if (values < -30) return \"#0080FF\";\n  if (values < -20) return \"#00BFFF\";\n  if (values < -10) return \"#00FFFF\";\n  if (values > -1) return \"#FFFFFF00\"; // transparent\n}\n\n\nfunction mapAmba(lat, lon, zoom, opa, basemap, colorfun){\n\nL.tileLayer(basemap, {\n  attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\n}).addTo(map);\n\nconst url_to_geotiff_file = 'static/amba_pc_2020-05-13_16.tif';\n\n{\n  fetch(url_to_geotiff_file)\n    .then(response => response.arrayBuffer())\n    .then(arrayBuffer => {\n      parseGeoraster(arrayBuffer).then(georaster => {\n        var layer = new GeoRasterLayer({\n          georaster: georaster,\n          opacity: opa,\n          pixelValuesToColorFn: colorfun,\n          resolution: 64\n        });\n        layer.addTo(map);\n\n        // Fit the map bounds to the raster\n        map.setView([lat, lon], zoom);\n      });\n    }) \n}}\n\n\n{\nif (crTriggerIndex === 5) {\n  mapAmba(-34.6037, -58.3816, 10, 0, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getColor);\n} else if (crTriggerIndex === 6) {\n  mapAmba(-34.6037, -58.3816, 10, 0.3, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getColor);\n}  else if (crTriggerIndex === 7) {\n  mapAmba(-34.6037, -58.3816, 10, 0.5, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getCold);\n}  else if (crTriggerIndex === 5) {\n  mapAmba(-34.5912, -58.3717, 15, 0.7, 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', getCold);\n} else {\n  mapAmba(-34.6037, -58.3816, 15, 0.4, 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', getCold);\n} \n}\n*/\n\n"}]}
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../..";
-window._ojs.paths.runtimeToRoot = "../../..";
-window._ojs.paths.docToRoot = "";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
