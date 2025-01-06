@@ -1,5 +1,5 @@
 ---
-title: Projecting Human Mobility and Disease Data to Support Decision-Making
+title: Mobility Matters
 format:
   closeread-html:
     remove-header-space: true
@@ -12,7 +12,7 @@ csl: diabetologia.csl
 ---
 
 # Mobility Matters.
-## Case study on how cell phones can assist in mapping human mobility during a pandemic.
+## A case study on how cell phones can assist in mapping human mobility during a pandemic.
 
 ### Introduction
 ::::{.cr-section layout="overlay-center"}

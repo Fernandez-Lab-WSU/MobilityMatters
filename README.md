@@ -1,6 +1,6 @@
 # MobilityMatters
 
-Mobility Matters is the beta version of a website aiming to explain human mobility data obtained from cell phones during the COVID-19 pandemic in Buenos Aires, Argentina.
+Mobility Matters is the beta version of a scrollytelling story. Its goal is to explain how human mobility can be mapped using data extracted from cell phone applications and relate it to the Social, Preventive, and Mandatory Isolation implemented in Buenos Aires, Argentina, during the COVID-19 pandemic.
 
 ## Code of Conduct
   
