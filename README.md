@@ -1,4 +1,5 @@
 # MobilityMatters
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14613189.svg)](https://doi.org/10.5281/zenodo.14613189)
 
 Mobility Matters is the beta version of a scrollytelling story. Its goal is to explain how human mobility can be mapped using data extracted from cell phone applications and relate it to the Social, Preventive, and Mandatory Isolation implemented in Buenos Aires, Argentina, during the COVID-19 pandemic.
 
@@ -23,6 +24,4 @@ The `quadkeyr` package, GeoCovid Buenos Aires, and GeoCovid App are part of the 
   Please refer to the license file for more information.  
   If you reuse information from this report, provide attribution and a link to this webpage using the following citation:
 
-  > D'Andrea, F. GeoCovid Buenos Aires [Computer software].  
-  > Dr. Fernandez Lab. Washington State University.  
-  > https://github.com/Fernandez-Lab-WSU/geocovid_bsas
+  
