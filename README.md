@@ -3,6 +3,10 @@
 
 Mobility Matters is the beta version of a scrollytelling story. Its goal is to explain how human mobility can be mapped using data extracted from cell phone applications and relate it to the Social, Preventive, and Mandatory Isolation implemented in Buenos Aires, Argentina, during the COVID-19 pandemic.
 
+**Link**: [https://florencia.quarto.pub/mobility-matters-beta/](https://florencia.quarto.pub/mobility-matters-beta/). 
+  
+**Version en Español/ version in Spanish**: [https://florencia.quarto.pub/gente-en-movimiento/](https://florencia.quarto.pub/gente-en-movimiento/). 
+
 ## Code of Conduct
   
   Please note that the closeread project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
